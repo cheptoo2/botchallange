@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from "react";
 import BotCollection from "./BotCollection";
 import YourBotArmy from "./YourBotArmy";
-
+import "./style.css"
 function App (){
     const [bots, setBots] = useState([]);
     const[botArmy,setBotArmy]=useState([]);
@@ -15,6 +15,7 @@ function App (){
     const addBotToArmy = (bot) => {
         if (!botArmy.some((b) => b.id === bot.id)) {
           setBotArmy([...botArmy, bot]);
+          
         }
       };
 
@@ -32,7 +33,7 @@ function App (){
       };
     
 return (
-    <div>
+    <div className="app">
       <BotCollection bots={bots} addBotToArmy={addBotToArmy}/>
       <YourBotArmy bots={botArmy} releaseBotFromArmy={releaseBotFromArmy}
       dischargeBot={dischargeBot}/>
