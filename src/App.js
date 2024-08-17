@@ -7,7 +7,7 @@ function App (){
     const[botArmy,setBotArmy]=useState([]);
   
     useEffect(() => {
-      fetch('https://json-server-vercel-p7t5d0q7v-cheptoo-lornas-projects.vercel.app/bots')
+      fetch('https://json-server-vercel-pi-gilt.vercel.app/bots')
         .then((res) => res.json())
         .then((data) => setBots(data));
     }, []); 
@@ -24,7 +24,7 @@ function App (){
       };
     
       const dischargeBot = (bot) => {
-        fetch(`'http://localhost:3000/bots'${bot.id}`, {
+        fetch(`https://json-server-vercel-pi-gilt.vercel.app/bots'${bot.id}`, {
           method: 'DELETE',
         }).then(() => {
           setBots(bots.filter((b) => b.id !== bot.id));
