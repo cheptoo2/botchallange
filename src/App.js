@@ -7,7 +7,7 @@ function App (){
     const[botArmy,setBotArmy]=useState([]);
   
     useEffect(() => {
-      fetch('http://localhost:3000/bots')
+      fetch('http://https://botchallange-e6gig99ic-cheptoo-lornas-projects.vercel.app//bots')
         .then((res) => res.json())
         .then((data) => setBots(data));
     }, []); 
